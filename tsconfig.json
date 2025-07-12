@@ -1,26 +1,33 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    /* Basic Options */
+    "target": "es5", // Specify ECMAScript target version
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    ], // List of library files to be included in the compilation.
+    "allowJs": true, // Allow javascript files to be compiled
+    "skipLibCheck": true, // Skip type checking of all declaration files (*.d.ts).
+    "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export.
+    "strict": true, // Enable all strict type-checking options.
+
+    /* Module Resolution Options */
+    "module": "esnext", // Specify module code generation
+    "moduleResolution": "node", // Resolve modules using Node.js style
+    "resolveJsonModule": true, // Include modules imported with .json extension
+    "isolatedModules": true, // Transpile each file as a separate module
+    "noEmit": true, // Do not emit output (transpilation is handled by Babel/build tool)
+
+    /* JSX Options */
+    "jsx": "react-jsx", // Specify JSX code generation: 'react-jsx' is the modern standard.
+
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
+    "noFallthroughCasesInSwitch": true // Report errors for fallthrough cases in switch statement.
   },
   "include": [
-    "src"
+    "src" // *** IMPORTANT: Tells TypeScript to only check files inside the 'src' directory.
   ]
 }
