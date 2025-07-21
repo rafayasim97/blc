@@ -1,8 +1,8 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import { NavLink } from '../types';
 import { MenuIcon, XIcon } from './Icons';
-import { servicesData } from '../data/services';
-import { ServiceDetails } from '../types';
+// Removed unused imports: import { servicesData } from '../data/services';
+// Removed unused imports: import { ServiceDetails } from '../types';
 
 interface HeaderProps {
     navLinks: NavLink[];
@@ -26,10 +26,10 @@ export function Header({ navLinks, currentPage, navigateTo, isMenuOpen, setIsMen
 
     return (
         <header className="bg-white shadow-md fixed w-full top-0 z-50">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="container mx-auto px-6 py-2 flex justify-between items-center">
                 <div className="flex flex-col items-start cursor-pointer" onClick={() => navigateTo('Home')}>
-                    <img src="/assets/logo_2.png" alt="Berkshire Law Chambers Logo" className="h-20" />
-                    <p className="px-4 mt-1 font-bold text-brand-gold text-sm">UK's leading immigration firm</p> {/* Removed mt-1 class */}
+                    <img src="/assets/logo_2.png" alt="Berkshire Law Chambers Logo" className="h-24" />
+                    <p className="text-brand-gold text-sm">UK's leading immigration firm</p>
                 </div>
                 
                 {/* Desktop Navigation */}
@@ -38,16 +38,16 @@ export function Header({ navLinks, currentPage, navigateTo, isMenuOpen, setIsMen
                         <div key={link.name} className="relative group">
                             {/* The padding here creates a "bridge" for the mouse */}
                             <div className="py-4 px-4">
-                                <a
-                                    href="#"
-                                    onClick={(e) => { e.preventDefault(); navigateTo(link.name); }}
+                                <button
+                                    type="button"
+                                    onClick={() => { navigateTo(link.name); }}
                                     className={`text-lg transition duration-300 flex items-center ${(currentPage === link.name || (link.name === 'Our Services' && isServicePageActive)) ? 'text-brand-gold' : 'text-brand-blue hover:text-brand-gold'}`}
                                 >
                                     {link.name}
                                     {link.megaMenu && (
                                         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                                     )}
-                                </a>
+                                </button>
                             </div>
 
                             {link.megaMenu && (
@@ -60,13 +60,13 @@ export function Header({ navLinks, currentPage, navigateTo, isMenuOpen, setIsMen
                                                 <ul className="space-y-2">
                                                     {column.links.map(subLink => (
                                                         <li key={subLink.name}>
-                                                            <a
-                                                                href="#"
-                                                                onClick={(e) => { e.preventDefault(); navigateTo(subLink.name); }}
-                                                                className={`block hover:text-brand-gold transition-colors whitespace-nowrap ${currentPage === subLink.name ? 'text-brand-gold' : 'text-gray-200'}`}
+                                                            <button
+                                                                type="button"
+                                                                onClick={() => { navigateTo(subLink.name); }}
+                                                                className={`block hover:text-brand-gold transition-colors whitespace-nowrap text-left ${currentPage === subLink.name ? 'text-brand-gold' : 'text-gray-200'}`}
                                                             >
                                                                 {subLink.name}
-                                                            </a>
+                                                            </button>
                                                         </li>
                                                     ))}
                                                 </ul>
@@ -94,37 +94,36 @@ export function Header({ navLinks, currentPage, navigateTo, isMenuOpen, setIsMen
                     <nav className="flex flex-col">
                         {navLinks.map(link => (
                             <div key={link.name} className="w-full border-b">
-                                <a
-                                    href="#"
-                                    onClick={(e) => {
-                                        e.preventDefault();
+                                <button
+                                    type="button"
+                                    onClick={() => {
                                         if (!link.megaMenu) {
                                             navigateTo(link.name);
                                         } else {
                                             setOpenMobileMenu(openMobileMenu === link.name ? null : link.name);
                                         }
                                     }}
-                                    className={`text-lg py-3 px-6 transition duration-300 block w-full flex justify-between items-center ${(currentPage === link.name || isSubLinkActive(link)) ? 'text-brand-gold font-semibold' : 'text-brand-blue'}`}
+                                    className={`text-lg py-3 px-6 transition duration-300 block w-full flex justify-between items-center text-left ${(currentPage === link.name || isSubLinkActive(link)) ? 'text-brand-gold font-semibold' : 'text-brand-blue'}`}
                                 >
                                     <span>{link.name}</span>
                                     {link.megaMenu && (
                                         <svg className={`w-5 h-5 transition-transform ${openMobileMenu === link.name ? 'transform rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                                     )}
-                                </a>
+                                </button>
                                 {link.megaMenu && openMobileMenu === link.name && (
                                     <div className="bg-gray-100 w-full pl-8 pb-2">
                                         {link.megaMenu.map(column => (
                                             <div key={column.title} className="py-2">
                                                 <h3 className="font-semibold text-brand-blue mb-2">{column.title}</h3>
                                                 {column.links.map(subLink => (
-                                                    <a
+                                                    <button
+                                                        type="button"
                                                         key={subLink.name}
-                                                        href="#"
-                                                        onClick={(e) => { e.preventDefault(); navigateTo(subLink.name); }}
-                                                        className={`block py-1 text-md hover:text-brand-gold ${currentPage === subLink.name ? 'text-brand-gold font-semibold' : 'text-gray-700'}`}
+                                                        onClick={() => { navigateTo(subLink.name); }}
+                                                        className={`block py-1 text-md hover:text-brand-gold transition-colors text-left ${currentPage === subLink.name ? 'text-brand-gold font-semibold' : 'text-gray-700'}`}
                                                     >
                                                         {subLink.name}
-                                                    </a>
+                                                    </button>
                                                 ))}
                                             </div>
                                         ))}

@@ -17,11 +17,11 @@ export function Footer({ navigateTo }: FooterProps) {
                     <div>
                         <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
                         <ul>
-                            <li className="mb-2"><a href="#" onClick={(e) => { e.preventDefault(); navigateTo('Home'); }} className="hover:text-brand-gold transition">Home</a></li>
-                            <li className="mb-2"><a href="#" onClick={(e) => { e.preventDefault(); navigateTo('About Us'); }} className="hover:text-brand-gold transition">About Us</a></li>
-                            <li className="mb-2"><a href="#" onClick={(e) => { e.preventDefault(); navigateTo('Our Services'); }} className="hover:text-brand-gold transition">Our Services</a></li>
-                            <li className="mb-2"><a href="#" onClick={(e) => { e.preventDefault(); navigateTo('Legal Updates'); }} className="hover:text-brand-gold transition">Legal Updates</a></li>
-                            <li className="mb-2"><a href="#" onClick={(e) => { e.preventDefault(); navigateTo('Contact'); }} className="hover:text-brand-gold transition">Contact</a></li>
+                            <li className="mb-2"><button type="button" onClick={() => navigateTo('Home')} className="hover:text-brand-gold transition text-left">Home</button></li>
+                            <li className="mb-2"><button type="button" onClick={() => navigateTo('About Us')} className="hover:text-brand-gold transition text-left">About Us</button></li>
+                            <li className="mb-2"><button type="button" onClick={() => navigateTo('Our Services')} className="hover:text-brand-gold transition text-left">Our Services</button></li>
+                            <li className="mb-2"><button type="button" onClick={() => navigateTo('Legal Updates')} className="hover:text-brand-gold transition text-left">Legal Updates</button></li>
+                            <li className="mb-2"><button type="button" onClick={() => navigateTo('Contact')} className="hover:text-brand-gold transition text-left">Contact</button></li>
                         </ul>
                     </div>
                     <div>
@@ -39,7 +39,7 @@ export function Footer({ navigateTo }: FooterProps) {
                             <a href="https://facebook.com/Berkshirelawchamber" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition">
                                 <FacebookIcon className="w-6 h-6" />
                             </a>
-                            <a href="https://instagram.com/berkshirelawchamberlegal" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition">
+                            <a href="https://instagram.com/YOURINSTAGRAMHANDLE" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition">
                                 <InstagramIcon className="w-6 h-6" />
                             </a>
                         </div>
