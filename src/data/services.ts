@@ -1,3 +1,4 @@
+// Add 'export' to the interfaces
 export interface ServiceDetails {
     title: string;
     description: string;
