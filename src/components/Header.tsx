@@ -29,7 +29,7 @@ export function Header({ navLinks, currentPage, navigateTo, isMenuOpen, setIsMen
             <div className="container mx-auto px-6 py-2 flex justify-between items-center">
                 <div className="flex flex-col items-start cursor-pointer" onClick={() => navigateTo('Home')}>
                     <img src="/assets/logo_2.png" alt="Berkshire Law Chambers Logo" className="h-24" />
-                    <p className="px-6 font-bold text-brand-gold text-sm">UK's leading immigration firm</p>
+                    <p className="px-6 font-bold text-brand-blue text-sm">UK's leading immigration firm</p>
                 </div>
                 
                 {/* Desktop Navigation */}
