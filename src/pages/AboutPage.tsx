@@ -3,8 +3,8 @@ import { TeamMember } from '../types';
 
 export function AboutPage() {
     const teamMembers: TeamMember[] = [
-        { name: 'Dr. Eleanor Vance', role: 'Senior Partner & Solicitor', imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500' },
-        { name: 'James Holloway', role: 'Immigration Solicitor', imageUrl: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=500' },
+        { name: 'Akhtar Gondal', role: 'Solicitor', imageUrl: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=500' },
+        // { name: 'James Holloway', role: 'Immigration Solicitor', imageUrl: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=500' },
         { name: 'Aisha Khan', role: 'Paralegal & Caseworker', imageUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500' },
     ];
 
@@ -17,7 +17,7 @@ export function AboutPage() {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800" alt="Our Office" className="rounded-lg shadow-xl" />
+                        <img src="/assets/team.jpeg" alt="Our Office" className="rounded-lg shadow-xl" />
                     </div>
                     <div>
                         <h2 className="text-3xl font-semibold text-secondary mb-4">Our Mission</h2>

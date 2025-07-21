@@ -26,9 +26,10 @@ export function Header({ navLinks, currentPage, navigateTo, isMenuOpen, setIsMen
 
     return (
         <header className="bg-white shadow-md fixed w-full top-0 z-50">
-            <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-                <div className="text-2xl font-serif font-bold text-brand-blue cursor-pointer" onClick={() => navigateTo('Home')}>
-                    Berkshire Law <span className="text-brand-gold">Chambers</span>
+            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div className="flex flex-col items-start cursor-pointer" onClick={() => navigateTo('Home')}>
+                    <img src="/assets/logo_2.png" alt="Berkshire Law Chambers Logo" className="h-20" />
+                    <p className="px-4 mt-1 font-bold text-brand-gold text-sm">UK's leading immigration firm</p> {/* Removed mt-1 class */}
                 </div>
                 
                 {/* Desktop Navigation */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { WhatsAppIcon, FacebookIcon, InstagramIcon } from './Icons'; // Import social media icons
 
 interface FooterProps {
     navigateTo: (page: string) => void;
@@ -31,9 +32,17 @@ export function Footer({ navigateTo }: FooterProps) {
                     </div>
                      <div>
                         <h3 className="text-lg font-semibold text-white mb-4">Connect With Us</h3>
-                        <p className="text-gray-400 text-sm">
-                            Follow us on social media for the latest updates. (Social media links would go here).
-                        </p>
+                        <div className="flex space-x-4">
+                            <a href="https://wa.me/+447810447971" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition">
+                                <WhatsAppIcon className="w-6 h-6" />
+                            </a>
+                            <a href="https://facebook.com/Berkshirelawchamber" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition">
+                                <FacebookIcon className="w-6 h-6" />
+                            </a>
+                            <a href="https://instagram.com/berkshirelawchamberlegal" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-gold transition">
+                                <InstagramIcon className="w-6 h-6" />
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div className="mt-10 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
